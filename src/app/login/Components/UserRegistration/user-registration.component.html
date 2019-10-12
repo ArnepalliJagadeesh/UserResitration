@@ -1,0 +1,261 @@
+<div class="row mar-top-20">
+    <div class="col-lg-12">
+            <h2 class="text-center">User Registration</h2>
+    </div>
+</div>
+<form #registrationForm="ngForm">
+    <div class="row mar-top-20">
+
+        <div class="col-lg-6">
+            <div class="section">
+                <h4 class="text-center hborder">Personal Details</h4>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="FirstName">First Name:</label>
+                            <input type="text" class="form-control" [(ngModel)]="userDetails.FirstName"
+                                placeholder="Enter First Name" name="FirstName" pattern="[a-zA-Z ]*" required
+                                #FirstName="ngModel">
+                            <div [hidden]="FirstName.valid || FirstName.pristine || userDetails.FirstName"
+                                class="errormsg">
+                                First Name is required
+                            </div>
+                            <div [hidden]="FirstName.valid || FirstName.pristine || !userDetails.FirstName"
+                                class="errormsg">
+                                Enter Valid First Name
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="LastName">Last Name:</label>
+                            <input type="text" class="form-control" [(ngModel)]="userDetails.LastName"
+                                placeholder="Enter Last Name" name="LastName" pattern="[a-zA-Z ]*" required
+                                #LastName="ngModel">
+                            <div [hidden]="LastName.valid || LastName.pristine || userDetails.LastName"
+                                class="errormsg">
+                                Last Name is required
+                            </div>
+                            <div [hidden]="LastName.valid || LastName.pristine || !userDetails.LastName"
+                                class="errormsg">
+                                Enter Valid Last Name
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="Email">Email:</label>
+                            <input type="text" class="form-control" [(ngModel)]="userDetails.Email"
+                                placeholder="Enter Email" name="Email" email="true"  required
+                                #Email="ngModel">
+                            <div [hidden]="Email.valid || Email.pristine || userDetails.Email" class="errormsg">
+                                Email is required
+                            </div>
+                            <div [hidden]="Email.valid || Email.pristine || !userDetails.Email" class="errormsg">
+                                Enter Valid Email
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+
+                        <div class="form-group">
+                            <label for="MobileNo">Mobile No:</label>
+                            <input type="number" class="form-control" [(ngModel)]="userDetails.MobileNo"
+                                placeholder="Enter Mobile No" name="MobileNo"  required
+                                #MobileNo="ngModel">
+                            <div [hidden]="MobileNo.valid || MobileNo.pristine || userDetails.MobileNo"
+                                class="errormsg">
+                                Mobile No is required
+                            </div>
+                            <div [hidden]="MobileNo.valid || MobileNo.pristine || !userDetails.MobileNo"
+                                class="errormsg">
+                                Enter Valid Mobile No
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="Gender" class="dspblk">Gender:</label>
+                            <div class="form-check-inline">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" checked
+                                        [(ngModel)]="userDetails.Gender" [value]="true" name="gender">Male
+                                </label>
+                            </div>
+                            <div class="form-check-inline">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" [value]="false" [(ngModel)]="userDetails.Gender"
+                                        name="gender">Female
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label for="Address">Address:</label>
+                            <textarea type="text" class="form-control" rows="5" [(ngModel)]="userDetails.Address"
+                                placeholder="Enter Address" name="Address" pattern="[a-zA-Z0-9 ]*" required
+                                #Address="ngModel"></textarea>
+                            <div [hidden]="Address.valid || Address.pristine || userDetails.Address" class="errormsg">
+                                Address is required
+                            </div>
+                            <div [hidden]="Address.valid || Address.pristine || !userDetails.Address" class="errormsg">
+                                Enter Valid Address
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="section">
+                <h4 class="text-center hborder">Login Details</h4>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="UserName">User Name:</label>
+                            <input type="text" class="form-control" [(ngModel)]="userDetails.UserName"
+                                placeholder="Enter User Name" name="UserName" pattern="(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{6,15})" required
+                                #UserName="ngModel">
+                            <div [hidden]="UserName.valid || UserName.pristine || userDetails.UserName"
+                                class="errormsg">
+                                User Name is required
+                            </div>
+                            <div [hidden]="UserName.valid || UserName.pristine || !userDetails.UserName"
+                                class="errormsg">
+                                Enter Valid User Name
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="Password">Password:</label>
+                            <input type="text" class="form-control" [(ngModel)]="userDetails.Password"
+                                placeholder="Enter Password" name="Password"  pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{8,30})"  required
+                                #Password="ngModel">
+                            <div [hidden]="Password.valid || Password.pristine || userDetails.Password"
+                                class="errormsg">
+                                Password is required
+                            </div>
+                            <div [hidden]="Password.valid || Password.pristine || !userDetails.Password"
+                                class="errormsg">
+                                Password Should be Combination of alphabets,numbers and a special character, Must contain one capital letter
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="ConfirmPassword">Confirm Password:</label>
+                            <input type="password" class="form-control" [(ngModel)]="userDetails.ConfirmPassword"
+                                placeholder="Enter Confirm Password" name="ConfirmPassword" validateEqual="Password"
+                                required #ConfirmPassword="ngModel">
+                            <div [hidden]="ConfirmPassword.valid || ConfirmPassword.pristine || userDetails.ConfirmPassword"
+                                class="errormsg">
+                                Confirm Password is required
+                            </div>
+                            <div [hidden]="ConfirmPassword.valid || ConfirmPassword.pristine || !userDetails.ConfirmPassword"
+                                class="errormsg">
+                               Confirm Password should Match with Password
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section mar-top-10">
+                <h4 class="text-center hborder">Security Details</h4>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <select class="form-control" [(ngModel)]="userDetails.Seq1" name="Seq1" required
+                                #Seq1="ngModel">
+                                <option value="">Select Security Question</option>
+                                <option value="1">What is the first name of your favourite uncle?</option>
+                                <option value="2">Where did you meet your spouse?</option>
+                                <option value="3">What is your eldest cousin's name? </option>
+                                <option value="4">What is your youngest child's nickname?</option>
+                                <option value="5">What is your eldest child's nickname?</option>
+                            </select>
+                            <div [hidden]="Seq1.valid || Seq1.pristine" class="errormsg">
+                                Please Select Security Question
+                            </div>
+                          
+                            <input type="text" class="form-control mar-top-5" [(ngModel)]="userDetails.SeqAns1"
+                                placeholder="Enter Security Answer" name="SeqAns1" pattern="[a-zA-Z ]*" required
+                                #SeqAns1="ngModel">
+                            <div [hidden]="SeqAns1.valid || SeqAns1.pristine" class="errormsg">
+                                Security Answer is required
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <select class="form-control" [(ngModel)]="userDetails.Seq2" name="Seq2" required
+                                #Seq2="ngModel">
+                                <option value="">Select Security Question</option>
+                                <option value="1">What is the first name of your favourite uncle?</option>
+                                <option value="2">Where did you meet your spouse?</option>
+                                <option value="3">What is your eldest cousin's name? </option>
+                                <option value="4">What is your youngest child's nickname?</option>
+                                <option value="5">What is your eldest child's nickname?</option>
+                            </select>
+                            <div [hidden]="Seq2.valid || Seq2.pristine" class="errormsg">
+                                Please Select Security Question
+                            </div>
+                            <input type="text" class="form-control mar-top-5" [(ngModel)]="userDetails.SeqAns2"
+                                placeholder="Enter Your Answer" name="SeqAns2" pattern="[a-zA-Z ]*" required
+                                #SeqAns2="ngModel">
+                            <div [hidden]="SeqAns2.valid || SeqAns2.pristine" class="errormsg">
+                                Security Answer is required
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <select class="form-control" [(ngModel)]="userDetails.Seq3" name="Seq3" required
+                                #Seq3="ngModel">
+                                <option value="">Select Security Question</option>
+                                <option value="1">What is the first name of your favourite uncle?</option>
+                                <option value="2">Where did you meet your spouse?</option>
+                                <option value="3">What is your eldest cousin's name? </option>
+                                <option value="4">What is your youngest child's nickname?</option>
+                                <option value="5">What is your eldest child's nickname?</option>
+                            </select>
+                            <div [hidden]="Seq3.valid || Seq3.pristine" class="errormsg">
+                                Please Select Security Question
+                            </div>
+                            <input type="text" class="form-control mar-top-5" [(ngModel)]="userDetails.SeqAns3"
+                                placeholder="Enter Your Answer" name="SeqAns3" pattern="[a-zA-Z ]*" required
+                                #SeqAns3="ngModel">
+                            <div [hidden]="SeqAns3.valid || SeqAns3.pristine" class="errormsg">
+                                Security Answer is required
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="form-group text-center">
+                <button type="submit" name="Save" (click)="SaveUserDetails()" [disabled]="!registrationForm.form.valid" [ngStyle]="{'background-color':!registrationForm.form.valid?'#CCC':'#007bff'}"
+                    class="btn btn-primary mar-top-20">Save</button>
+            </div>
+        </div>
+    </div>
+
+</form>

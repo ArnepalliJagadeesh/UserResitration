@@ -1,0 +1,40 @@
+.section {
+    padding: 10px;
+    border: 1px solid #000;
+}
+
+.mar-top-20 {
+    margin-top: 20px;
+}
+
+.dspblk {
+    display: block;
+}
+
+.mar-top-10 {
+    margin-top: 10px;
+}
+
+.mar-top-5 {
+    margin-top: 5px;
+}
+
+.mar-btm-0 {
+    margin-bottom: 0px;
+}
+
+.mar-auto {
+    margin: auto;
+}
+
+.errormsg {
+    width: 100%;
+    margin-top: .25rem;
+    font-size: 80%;
+    color: #dc3545;
+}
+.hborder{
+    border-bottom:1px solid #000;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+}
