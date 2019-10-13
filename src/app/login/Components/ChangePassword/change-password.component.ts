@@ -22,6 +22,7 @@ export class ChangePasswordComponent implements OnInit {
 
   ngOnInit() {
     this.dataService.CurrentUserDetails.subscribe(res => this.userDetails = res);
+    console.log(this.userDetails.UserName);
     if (!this.userDetails.UserName) {
       this.userDetails = this.mock.MockUserInfo;
     }

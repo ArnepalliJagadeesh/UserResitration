@@ -38,7 +38,6 @@ export class LoginComponent implements OnInit {
     }
     if (this.UserName !== this.userDetails.UserName || this.Password !== this.userDetails.Password) {
       this.ErrorMessage = 'Invalid Credentials - Please Enter Valid Credentials';
-      return;
     }
     if (this.ErrorMessage === '') {
       this.router.navigate(['../Home'], { relativeTo: this.route });
@@ -66,5 +65,8 @@ export class LoginComponent implements OnInit {
     }
 
     this.router.navigate(['../PasswordReset'], { relativeTo: this.route });
+  }
+  UpdateCurrentUserObject() {
+    this.dataService.UpdateUserDetails(this.userDetails);
   }
 }
