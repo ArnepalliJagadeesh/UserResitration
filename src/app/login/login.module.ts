@@ -9,11 +9,11 @@ import { LoginComponent } from './Components/Login/login.component';
 import { PasswordResetComponent } from './Components/PasswordReset/password-reset.component';
 import { ChangePasswordComponent } from './Components/ChangePassword/change-password.component';
 import {EqualValidator} from './Directives/EqualValidator';
-import {DataService } from './Services/DataService';
+import { HomeComponent } from './Components/Home/home.component';
 
 @NgModule({
   declarations: [UserRegistrationComponent, ReviewDetailsComponent, ConfirmationDetailsComponent,
-    LoginComponent, PasswordResetComponent, ChangePasswordComponent, EqualValidator],
+    LoginComponent, PasswordResetComponent, ChangePasswordComponent, EqualValidator, HomeComponent],
   imports: [
     CommonModule,
     FormsModule,

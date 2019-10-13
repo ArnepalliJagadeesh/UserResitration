@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../Services/DataService';
+import { UserDetails } from '../../Models/UserRegistration';
+import { Router, ActivatedRoute } from '@angular/router';
+import { MockInfo } from '../../MockData/mockData';
 
 @Component({
   selector: 'app-change-password',
@@ -7,9 +11,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChangePasswordComponent implements OnInit {
 
-  constructor() { }
+  userDetails: UserDetails = {} as UserDetails;
+  oldPassword = '';
+  NewPassword = '';
+  UserName = '';
+  ConfirmPassword = '';
+  ErrorMessage = '';
+  isPasswordChanged = false;
+  constructor(private dataService: DataService, private router: Router, private route: ActivatedRoute, private mock: MockInfo) { }
 
   ngOnInit() {
+    this.dataService.CurrentUserDetails.subscribe(res => this.userDetails = res);
+    if (!this.userDetails.UserName) {
+      this.userDetails = this.mock.MockUserInfo;
+    }
+  }
+  ChangeUserPassword() {
+    if (this.oldPassword !== this.userDetails.Password || this.UserName !== this.userDetails.UserName) {
+      this.ErrorMessage = 'Invalid Credentials - Please Enter Valid Credentials';
+      return;
+    }
+    this.userDetails.Password = this.NewPassword;
+    this.userDetails.ConfirmPassword = this.NewPassword;
+    this.isPasswordChanged = true;
   }
 
 }

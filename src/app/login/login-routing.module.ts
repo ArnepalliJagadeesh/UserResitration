@@ -6,6 +6,7 @@ import { ConfirmationDetailsComponent } from './Components/ConfirmationDetails/c
 import { LoginComponent } from './Components/Login/login.component';
 import { PasswordResetComponent } from './Components/PasswordReset/password-reset.component';
 import { ChangePasswordComponent } from './Components/ChangePassword/change-password.component';
+import { HomeComponent } from './Components/Home/home.component';
 
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'ReviewDetails', component: ReviewDetailsComponent },
   { path: 'ConfirmationDetails', component: ConfirmationDetailsComponent },
   { path: 'Login', component: LoginComponent },
+  { path: 'Home', component: HomeComponent },
   { path: 'PasswordReset', component: PasswordResetComponent },
   { path: 'ChangePassword', component: ChangePasswordComponent },
   // { path: '**', redirectTo: 'login', pathMatch: 'full' }

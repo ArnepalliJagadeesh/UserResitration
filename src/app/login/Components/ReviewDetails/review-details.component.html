@@ -1,1 +1,126 @@
-<p>review-details works!</p>
+<div class="row mar-top-20">
+    <div class="col-lg-12">
+        <h2 class="text-center">Review User Details</h2>
+    </div>
+</div>
+
+<div class="row mar-top-20">
+
+    <div class="col-lg-4">
+        <div class="section">
+            <h4 class="text-center hborder">Personal Details</h4>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label for="FirstName">First Name: {{userDetails.FirstName}}</label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label for="LastName">Last Name: {{userDetails.LastName}}</label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label for="Email">Email: {{userDetails.Email}}</label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+
+                    <div class="form-group">
+                        <label for="MobileNo">Mobile No: {{userDetails.MobileNo}}</label>
+
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label for="Gender" class="dspblk">Gender: {{(userDetails.Gender? 'Male': 'Female')}} </label>
+
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label for="Address">Address:</label>
+                        <textarea type="text" class="form-control" rows="5" readonly
+                            [(ngModel)]="userDetails.Address"></textarea>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group text-center">
+                        <button type="submit" name="Edit" (click)="EditUserDetails()"
+                            class="btn btn-primary mar-top-20">Edit</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="section">
+            <h4 class="text-center hborder">Login Details</h4>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label for="UserName">User Name: {{userDetails.UserName }}</label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label for="Password">Password: xxxxxxxxxxxx</label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                        <div class="form-group text-center">
+                            <button type="submit" name="Edit" (click)="EditUserDetails()"
+                                class="btn btn-primary mar-top-20">Edit</button>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-lg-4">
+        <div class="section mar-top-10">
+            <h4 class="text-center hborder">Security Details</h4>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <div> <label>Q) {{userDetails.Seq1}} </label></div>
+                        <div> <label>A) {{userDetails.SeqAns1}} </label></div>
+                    </div>
+
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <div> <label>Q) {{userDetails.Seq2}} </label></div>
+                        <div> <label>A) {{userDetails.SeqAns2}} </label></div>
+                    </div>
+
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <div> <label>Q) {{userDetails.Seq3}} </label></div>
+                        <div> <label>A) {{userDetails.SeqAns3}} </label></div>
+                    </div>
+
+                </div>
+                <div class="col-lg-12">
+                        <div class="form-group text-center">
+                            <button type="submit" name="Edit" (click)="EditUserDetails()"
+                                class="btn btn-primary mar-top-20">Edit</button>
+                        </div>
+                    </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="form-group text-center">
+            <button type="submit" name="Save" (click)="SubmitUserDetails()"
+                class="btn btn-primary mar-top-20">Save</button>
+        </div>
+    </div>
+</div>

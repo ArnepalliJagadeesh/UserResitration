@@ -136,7 +136,7 @@
                     <div class="col-lg-6">
                         <div class="form-group">
                             <label for="Password">Password:</label>
-                            <input type="text" class="form-control" [(ngModel)]="userDetails.Password"
+                            <input type="password" class="form-control" [(ngModel)]="userDetails.Password"
                                 placeholder="Enter Password" name="Password"  pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{8,30})"  required
                                 #Password="ngModel">
                             <div [hidden]="Password.valid || Password.pristine || userDetails.Password"
@@ -175,11 +175,11 @@
                             <select class="form-control" [(ngModel)]="userDetails.Seq1" name="Seq1" required
                                 #Seq1="ngModel">
                                 <option value="">Select Security Question</option>
-                                <option value="1">What is the first name of your favourite uncle?</option>
-                                <option value="2">Where did you meet your spouse?</option>
-                                <option value="3">What is your eldest cousin's name? </option>
-                                <option value="4">What is your youngest child's nickname?</option>
-                                <option value="5">What is your eldest child's nickname?</option>
+                                <option value="What is the first name of your favourite uncle?">What is the first name of your favourite uncle?</option>
+                                <option value="Where did you meet your spouse?">Where did you meet your spouse?</option>
+                                <option value="What is your eldest cousin's name?">What is your eldest cousin's name? </option>
+                                <option value="What is your youngest child's nickname?">What is your youngest child's nickname?</option>
+                                <option value="What is your eldest child's nickname?">What is your eldest child's nickname?</option>
                             </select>
                             <div [hidden]="Seq1.valid || Seq1.pristine" class="errormsg">
                                 Please Select Security Question
@@ -201,11 +201,11 @@
                             <select class="form-control" [(ngModel)]="userDetails.Seq2" name="Seq2" required
                                 #Seq2="ngModel">
                                 <option value="">Select Security Question</option>
-                                <option value="1">What is the first name of your favourite uncle?</option>
-                                <option value="2">Where did you meet your spouse?</option>
-                                <option value="3">What is your eldest cousin's name? </option>
-                                <option value="4">What is your youngest child's nickname?</option>
-                                <option value="5">What is your eldest child's nickname?</option>
+                                <option value="What is the first name of your favourite uncle?">What is the first name of your favourite uncle?</option>
+                                <option value="Where did you meet your spouse?">Where did you meet your spouse?</option>
+                                <option value="What is your eldest cousin's name?">What is your eldest cousin's name? </option>
+                                <option value="What is your youngest child's nickname?">What is your youngest child's nickname?</option>
+                                <option value="What is your eldest child's nickname?">What is your eldest child's nickname?</option>
                             </select>
                             <div [hidden]="Seq2.valid || Seq2.pristine" class="errormsg">
                                 Please Select Security Question
@@ -226,11 +226,11 @@
                             <select class="form-control" [(ngModel)]="userDetails.Seq3" name="Seq3" required
                                 #Seq3="ngModel">
                                 <option value="">Select Security Question</option>
-                                <option value="1">What is the first name of your favourite uncle?</option>
-                                <option value="2">Where did you meet your spouse?</option>
-                                <option value="3">What is your eldest cousin's name? </option>
-                                <option value="4">What is your youngest child's nickname?</option>
-                                <option value="5">What is your eldest child's nickname?</option>
+                                <option value="What is the first name of your favourite uncle?">What is the first name of your favourite uncle?</option>
+                                <option value="Where did you meet your spouse?">Where did you meet your spouse?</option>
+                                <option value="What is your eldest cousin's name?">What is your eldest cousin's name? </option>
+                                <option value="What is your youngest child's nickname?">What is your youngest child's nickname?</option>
+                                <option value="What is your eldest child's nickname?">What is your eldest child's nickname?</option>
                             </select>
                             <div [hidden]="Seq3.valid || Seq3.pristine" class="errormsg">
                                 Please Select Security Question
@@ -253,7 +253,7 @@
         <div class="col-lg-12">
             <div class="form-group text-center">
                 <button type="submit" name="Save" (click)="SaveUserDetails()" [disabled]="!registrationForm.form.valid" [ngStyle]="{'background-color':!registrationForm.form.valid?'#CCC':'#007bff'}"
-                    class="btn btn-primary mar-top-20">Save</button>
+                    class="btn btn-primary mar-top-20">Submit</button>
             </div>
         </div>
     </div>

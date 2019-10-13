@@ -12,13 +12,13 @@ export class UserRegistrationComponent implements OnInit {
 
   constructor(private dataService: DataService, private router: Router, private route: ActivatedRoute) { }
   userDetails: UserDetails = {} as UserDetails;
-  pwdPattern = '(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}';
-  unamePattern = '^[a-z0-9_-]{8,15}$';
   ngOnInit() {
     this.dataService.CurrentUserDetails.subscribe(res => this.userDetails = res);
-    this.userDetails.Seq1 = '';
-    this.userDetails.Seq2 = '';
-    this.userDetails.Seq3 = '';
+    if (!this.userDetails.Seq1) {
+      this.userDetails.Seq1 = '';
+      this.userDetails.Seq2 = '';
+      this.userDetails.Seq3 = '';
+    }
     this.userDetails.Gender = true;
   }
   SaveUserDetails() {

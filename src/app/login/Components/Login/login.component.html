@@ -1,1 +1,88 @@
-<p>login works!</p>
+
+
+<div class="row mar-top-20">
+    <div class="col-lg-3">
+    </div>
+    <div class="col-lg-6">
+        <div class="section">
+            <h4 class="text-center hborder">User Login</h4>
+            <div class="row" *ngIf="ErrorMessage !=''">
+                <div class="col-lg-12">
+                    <div class="text-center errMsg">{{ErrorMessage}}</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label for="UserName">User Name:</label>
+                        <input type="text" class="form-control" [(ngModel)]="UserName" placeholder="Enter User Name"
+                            name="UserName">
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label for="Password">Password:</label>
+                        <input type="password" class="form-control" placeholder="Enter password" [(ngModel)]="Password">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group text-center">
+                        <button type="submit" name="Save" (click)="UserLogin()"
+                            class="btn btn-primary mar-top-20">Login</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group text-left">
+                        <label class="pwdlink" (click)="forgotPass()">Forgot Password</label>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group text-right">
+                        <label class="pwdlink" (click)="changePass()">Change Password</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" *ngIf="isShowForgotPassword">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label for="seq1">1) {{userDetails.Seq1}}</label>
+                        <input type="text" class="form-control" [(ngModel)]="SeqAns1"
+                            placeholder="Enter Security Answer">
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label for="seq2">2) {{userDetails.Seq2}}</label>
+                        <input type="text" class="form-control" [(ngModel)]="SeqAns2"
+                            placeholder="Enter Security Answer">
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label for="seq2">3) {{userDetails.Seq3}}</label>
+                        <input type="text" class="form-control" [(ngModel)]="SeqAns3"
+                            placeholder="Enter Security Answer">
+                    </div>
+                </div>
+            </div>
+            <div class="row" *ngIf="isShowForgotPassword">
+                <div class="col-lg-12">
+                    <div class="form-group text-center">
+                        <button type="submit" name="Validate" (click)="ValdateSecurity()"
+                            class="btn btn-primary mar-top-20">Validate</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-lg-3">
+    </div>
+</div>

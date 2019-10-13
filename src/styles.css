@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+.mar-top-20 {
+    margin-top: 20px;
+}
+
+.dspblk {
+    display: block;
+}
+
+.mar-top-10 {
+    margin-top: 10px;
+}
+
+.mar-top-5 {
+    margin-top: 5px;
+}
+
+.mar-btm-0 {
+    margin-bottom: 0px;
+}
