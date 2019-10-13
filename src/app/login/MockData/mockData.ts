@@ -19,4 +19,10 @@ export class MockInfo {
         Seq3: `What is your eldest cousin's name?`,
         SeqAns3: 'Pooja'
     };
+
+    SecurityQuestions: string[] = ['What is the first name of your favourite uncle?',
+        'Where did you meet your spouse?',
+        `What is your eldest cousin's name?`,
+        `What is your youngest child's nickname?`,
+        `What is your eldest child's nickname?`];
 }

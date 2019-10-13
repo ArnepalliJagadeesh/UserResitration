@@ -27,12 +27,14 @@ export class ChangePasswordComponent implements OnInit {
     }
   }
   ChangeUserPassword() {
+    this.ErrorMessage = '';
     if (this.oldPassword !== this.userDetails.Password || this.UserName !== this.userDetails.UserName) {
       this.ErrorMessage = 'Invalid Credentials - Please Enter Valid Credentials';
       return;
     }
     this.userDetails.Password = this.NewPassword;
     this.userDetails.ConfirmPassword = this.NewPassword;
+    this.dataService.UpdateUserDetails(this.userDetails);
     this.isPasswordChanged = true;
   }
 

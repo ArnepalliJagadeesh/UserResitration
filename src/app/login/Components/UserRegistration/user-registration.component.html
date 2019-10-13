@@ -1,6 +1,6 @@
 <div class="row mar-top-20">
     <div class="col-lg-12">
-            <h2 class="text-center">User Registration</h2>
+        <h2 class="text-center">User Registration</h2>
     </div>
 </div>
 <form #registrationForm="ngForm">
@@ -48,8 +48,7 @@
                         <div class="form-group">
                             <label for="Email">Email:</label>
                             <input type="text" class="form-control" [(ngModel)]="userDetails.Email"
-                                placeholder="Enter Email" name="Email" email="true"  required
-                                #Email="ngModel">
+                                placeholder="Enter Email" name="Email" email="true" required #Email="ngModel">
                             <div [hidden]="Email.valid || Email.pristine || userDetails.Email" class="errormsg">
                                 Email is required
                             </div>
@@ -63,8 +62,7 @@
                         <div class="form-group">
                             <label for="MobileNo">Mobile No:</label>
                             <input type="number" class="form-control" [(ngModel)]="userDetails.MobileNo"
-                                placeholder="Enter Mobile No" name="MobileNo"  required
-                                #MobileNo="ngModel">
+                                placeholder="Enter Mobile No" name="MobileNo" required #MobileNo="ngModel">
                             <div [hidden]="MobileNo.valid || MobileNo.pristine || userDetails.MobileNo"
                                 class="errormsg">
                                 Mobile No is required
@@ -88,8 +86,8 @@
                             </div>
                             <div class="form-check-inline">
                                 <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" [value]="false" [(ngModel)]="userDetails.Gender"
-                                        name="gender">Female
+                                    <input type="radio" class="form-check-input" [value]="false"
+                                        [(ngModel)]="userDetails.Gender" name="gender">Female
                                 </label>
                             </div>
                         </div>
@@ -121,8 +119,8 @@
                         <div class="form-group">
                             <label for="UserName">User Name:</label>
                             <input type="text" class="form-control" [(ngModel)]="userDetails.UserName"
-                                placeholder="Enter User Name" name="UserName" pattern="(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{6,15})" required
-                                #UserName="ngModel">
+                                placeholder="Enter User Name" name="UserName"
+                                pattern="(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{6,15})" required #UserName="ngModel">
                             <div [hidden]="UserName.valid || UserName.pristine || userDetails.UserName"
                                 class="errormsg">
                                 User Name is required
@@ -137,7 +135,8 @@
                         <div class="form-group">
                             <label for="Password">Password:</label>
                             <input type="password" class="form-control" [(ngModel)]="userDetails.Password"
-                                placeholder="Enter Password" name="Password"  pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{8,30})"  required
+                                placeholder="Enter Password" name="Password"
+                                pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{8,30})" required
                                 #Password="ngModel">
                             <div [hidden]="Password.valid || Password.pristine || userDetails.Password"
                                 class="errormsg">
@@ -145,7 +144,8 @@
                             </div>
                             <div [hidden]="Password.valid || Password.pristine || !userDetails.Password"
                                 class="errormsg">
-                                Password Should be Combination of alphabets,numbers and a special character, Must contain one capital letter
+                                Password Should be Combination of alphabets,numbers and a special character, Must
+                                contain one capital letter
                             </div>
                         </div>
                     </div>
@@ -161,7 +161,7 @@
                             </div>
                             <div [hidden]="ConfirmPassword.valid || ConfirmPassword.pristine || !userDetails.ConfirmPassword"
                                 class="errormsg">
-                               Confirm Password should Match with Password
+                                Confirm Password should Match with Password
                             </div>
                         </div>
                     </div>
@@ -175,16 +175,17 @@
                             <select class="form-control" [(ngModel)]="userDetails.Seq1" name="Seq1" required
                                 #Seq1="ngModel">
                                 <option value="">Select Security Question</option>
-                                <option value="What is the first name of your favourite uncle?">What is the first name of your favourite uncle?</option>
-                                <option value="Where did you meet your spouse?">Where did you meet your spouse?</option>
-                                <option value="What is your eldest cousin's name?">What is your eldest cousin's name? </option>
-                                <option value="What is your youngest child's nickname?">What is your youngest child's nickname?</option>
-                                <option value="What is your eldest child's nickname?">What is your eldest child's nickname?</option>
+
+                                <option *ngFor="let opt of SecurityQuestions"
+                                    [ngClass]="{'dspnone' : (userDetails.Seq2 == opt || userDetails.Seq3 == opt)}"
+                                    [value]="opt">
+                                    {{opt}}</option>
+
                             </select>
                             <div [hidden]="Seq1.valid || Seq1.pristine" class="errormsg">
                                 Please Select Security Question
                             </div>
-                          
+
                             <input type="text" class="form-control mar-top-5" [(ngModel)]="userDetails.SeqAns1"
                                 placeholder="Enter Security Answer" name="SeqAns1" pattern="[a-zA-Z ]*" required
                                 #SeqAns1="ngModel">
@@ -201,11 +202,10 @@
                             <select class="form-control" [(ngModel)]="userDetails.Seq2" name="Seq2" required
                                 #Seq2="ngModel">
                                 <option value="">Select Security Question</option>
-                                <option value="What is the first name of your favourite uncle?">What is the first name of your favourite uncle?</option>
-                                <option value="Where did you meet your spouse?">Where did you meet your spouse?</option>
-                                <option value="What is your eldest cousin's name?">What is your eldest cousin's name? </option>
-                                <option value="What is your youngest child's nickname?">What is your youngest child's nickname?</option>
-                                <option value="What is your eldest child's nickname?">What is your eldest child's nickname?</option>
+                                <option *ngFor="let opt of SecurityQuestions"
+                                [ngClass]="{'dspnone' : (userDetails.Seq1 == opt || userDetails.Seq3 == opt)}"
+                                [value]="opt">
+                                {{opt}}</option>
                             </select>
                             <div [hidden]="Seq2.valid || Seq2.pristine" class="errormsg">
                                 Please Select Security Question
@@ -226,11 +226,10 @@
                             <select class="form-control" [(ngModel)]="userDetails.Seq3" name="Seq3" required
                                 #Seq3="ngModel">
                                 <option value="">Select Security Question</option>
-                                <option value="What is the first name of your favourite uncle?">What is the first name of your favourite uncle?</option>
-                                <option value="Where did you meet your spouse?">Where did you meet your spouse?</option>
-                                <option value="What is your eldest cousin's name?">What is your eldest cousin's name? </option>
-                                <option value="What is your youngest child's nickname?">What is your youngest child's nickname?</option>
-                                <option value="What is your eldest child's nickname?">What is your eldest child's nickname?</option>
+                                <option *ngFor="let opt of SecurityQuestions"
+                                    [ngClass]="{'dspnone' : (userDetails.Seq2 == opt || userDetails.Seq1 == opt)}"
+                                    [value]="opt">
+                                    {{opt}}</option>
                             </select>
                             <div [hidden]="Seq3.valid || Seq3.pristine" class="errormsg">
                                 Please Select Security Question
@@ -252,7 +251,8 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="form-group text-center">
-                <button type="submit" name="Save" (click)="SaveUserDetails()" [disabled]="!registrationForm.form.valid" [ngStyle]="{'background-color':!registrationForm.form.valid?'#CCC':'#007bff'}"
+                <button type="submit" name="Save" (click)="SaveUserDetails()" [disabled]="!registrationForm.form.valid"
+                    [ngStyle]="{'background-color':!registrationForm.form.valid?'#CCC':'#007bff'}"
                     class="btn btn-primary mar-top-20">Submit</button>
             </div>
         </div>

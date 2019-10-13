@@ -26,6 +26,7 @@ export class PasswordResetComponent implements OnInit {
     }
   }
   ChangeUserPassword() {
+    this.ErrorMessage = '';
     if (this.UserName !== this.userDetails.UserName) {
       this.ErrorMessage = 'User Name Does Not Exists';
       return;
